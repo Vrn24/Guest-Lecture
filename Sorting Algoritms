@@ -1,0 +1,98 @@
+/*22070123129*/
+/*Varun Pagote*/
+/*Sorting Algoritms*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Selection Sort
+void selectionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; ++i) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i) {
+            swap(arr[i], arr[minIndex]);
+        }
+    }
+}
+
+// Insertion Sort
+void insertionSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+// Bubble Sort
+void bubbleSort(vector<int>& arr) {
+    int n = arr.size();
+    for (int i = 0; i < n - 1; ++i) {
+        bool swapped = false;
+        for (int j = 0; j < n - 1 - i; ++j) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break; // If no swaps were made in a pass, the array is already sorted.
+        }
+    }
+}
+
+int main() {
+    int n;
+    vector<int> arr;
+
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+
+    cout << "Enter " << n << " integers:" << endl;
+    for (int i = 0; i < n; ++i) {
+        int num;
+        cin >> num;
+        arr.push_back(num);
+    }
+
+    // Copy the original array for each sorting algorithm
+    vector<int> selectionSorted = arr;
+    vector<int> insertionSorted = arr;
+    vector<int> bubbleSorted = arr;
+
+    selectionSort(selectionSorted);
+    insertionSort(insertionSorted);
+    bubbleSort(bubbleSorted);
+
+    cout << "Selection Sort Result: ";
+    for (int num : selectionSorted) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    cout << "Insertion Sort Result: ";
+    for (int num : insertionSorted) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    cout << "Bubble Sort Result: ";
+    for (int num : bubbleSorted) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
