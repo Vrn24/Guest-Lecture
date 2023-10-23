@@ -103,4 +103,43 @@ int main() {
 
 ![image](https://github.com/Vrn24/Guest-Lecture/assets/112547439/adda7da6-47a2-4c13-b53f-0be7d4e113af)
 
-fvfv
+# Infix to Postfix Conversion using Stack
+
+# Queue Implementation in C++
+
+This repository contains a simple C++ program that demonstrates the implementation of a queue data structure with a menu-driven interface. The program allows you to enqueue, dequeue, display the queue elements, and exit the application.
+
+## Introduction
+
+A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, elements are inserted at the rear (enqueue) and removed from the front (dequeue). This C++ program provides a basic queue implementation with user-friendly menu options to interact with the queue.
+
+## Algorithm
+
+The program utilizes a circular array to represent the queue. Here's a high-level overview of the algorithm:
+
+1. Initialize an empty queue with a front and rear set to -1.
+2. Display a menu with the following options:
+   - Enqueue: Add an element to the rear of the queue.
+   - Dequeue: Remove an element from the front of the queue.
+   - Display: Show the elements in the queue.
+   - Exit: Terminate the program.
+3. Based on the user's choice, perform the respective operation:
+   - Enqueue: Insert an element at the rear of the queue, updating the rear index.
+   - Dequeue: Remove an element from the front of the queue, updating the front index.
+   - Display: Show the elements in the queue from front to rear.
+   - Exit: End the program.
+4. Continue executing menu options until the user chooses to exit.
+
+## Usage
+
+To use this program:
+
+1. Clone or download this repository to your local machine.
+2. Open a C++ compiler or IDE.
+3. Build and run the program.
+4. Follow the on-screen menu to enqueue, dequeue, display, or exit.
+
+## Output
+
+![image](https://github.com/Vrn24/Guest-Lecture/assets/112547439/b8b3e5ef-b6bd-4a71-ae93-fcd35c97b0e8)
+
