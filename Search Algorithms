@@ -1,0 +1,75 @@
+/*22070123129*/
+/*Varun Pagote*/
+/*Search Algorithms*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// Linear Search
+int linearSearch(const vector<int>& arr, int target) {
+    for (int i = 0; i < arr.size(); ++i) {
+        if (arr[i] == target) {
+            return i;  // Return the index if found
+        }
+    }
+    return -1;  // Return -1 if not found
+}
+
+// Binary Search
+int binarySearch(const vector<int>& arr, int target) {
+    int left = 0;
+    int right = arr.size() - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target) {
+            return mid;  // Return the index if found
+        }
+        if (arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return -1;  // Return -1 if not found
+}
+
+int main() {
+    int n, target;
+    vector<int> arr;
+
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+
+    cout << "Enter " << n << " integers in sorted order:" << endl;
+    for (int i = 0; i < n; ++i) {
+        int num;
+        cin >> num;
+        arr.push_back(num);
+    }
+
+    cout << "Enter the element you want to search for: ";
+    cin >> target;
+
+    // Perform linear search
+    int linearResult = linearSearch(arr, target);
+    if (linearResult != -1) {
+        cout << "Linear Search: Element found at index " << linearResult << endl;
+    } else {
+        cout << "Linear Search: Element not found in the array." << endl;
+    }
+
+    // Perform binary search
+    int binaryResult = binarySearch(arr, target);
+    if (binaryResult != -1) {
+        cout << "Binary Search: Element found at index " << binaryResult << endl;
+    } else {
+        cout << "Binary Search: Element not found in the array." << endl;
+    }
+
+    return 0;
+}
