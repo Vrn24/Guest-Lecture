@@ -143,3 +143,55 @@ To use this program:
 
 ![image](https://github.com/Vrn24/Guest-Lecture/assets/112547439/b8b3e5ef-b6bd-4a71-ae93-fcd35c97b0e8)
 
+# Searching Algorithm
+
+# Linear and Binary Search in C++
+
+This repository contains a C++ program that demonstrates both linear and binary search algorithms for finding an element in a sorted array. This program allows users to input an array and a target element, and it will perform both linear and binary search operations to find the target element.
+
+## Introduction
+
+Searching is a fundamental operation in computer science. Two commonly used search algorithms are:
+
+1. **Linear Search**: This algorithm sequentially checks each element of the array until a match is found or the entire array is traversed. It is suitable for unsorted arrays.
+
+2. **Binary Search**: This algorithm works on a sorted array by repeatedly dividing the search interval in half. It efficiently narrows down the search space and is much faster for large sorted datasets.
+
+This C++ program provides both linear and binary search functionalities and is a useful tool to understand and compare these search algorithms.
+
+## Algorithm
+
+Here is a high-level overview of the program's algorithm:
+
+1. Input the number of elements in the array and the sorted array itself from the user.
+2. Prompt the user to input the target element they want to search for.
+3. Perform **Linear Search**:
+   - Iterate through the array sequentially to find the target element.
+   - If found, return the index; otherwise, return -1.
+4. Perform **Binary Search**:
+   - Set the left and right boundaries to the first and last elements of the array, respectively.
+   - Continuously divide the search space in half and compare the middle element with the target.
+   - If the middle element matches the target, return the index; otherwise, update the boundaries accordingly.
+   - Repeat the process until the target is found or the search space is empty.
+   - If found, return the index; otherwise, return -1.
+5. Display the search results for both linear and binary search.
+
+## Usage
+
+To use this program:
+
+1. Clone or download this repository to your local machine.
+2. Open a C++ compiler or IDE.
+3. Build and run the program.
+4. Follow the on-screen instructions to input the array and the element you want to search for.
+5. The program will execute both linear and binary search and display the results.
+
+## Output
+
+![Screenshot 2023-10-23 155239](https://github.com/Vrn24/Guest-Lecture/assets/112547439/6f9409ff-798e-4471-ba2e-4ae602542445)
+
+
+
+
+
+
