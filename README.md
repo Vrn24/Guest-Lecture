@@ -6,13 +6,8 @@ This C++ program demonstrates the conversion of infix expressions to postfix usi
 
 - [Introduction](#introduction)
 - [Algorithm](#algorithm)
-- [Features](#features)
-- [How to Use](#how-to-use)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [License](#license)
-- [Credits](#credits)
-
+- [Code](#code)
+- [Output](#output)
 ## Introduction
 
 Infix notation is a common way of writing arithmetic expressions, but it can be difficult to evaluate directly. The Shunting Yard algorithm is a method to convert infix expressions to postfix notation, which is easier to evaluate.
