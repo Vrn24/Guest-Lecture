@@ -190,6 +190,54 @@ To use this program:
 
 ![Screenshot 2023-10-23 155239](https://github.com/Vrn24/Guest-Lecture/assets/112547439/6f9409ff-798e-4471-ba2e-4ae602542445)
 
+# Searching Algorithm
+
+# Sorting Algorithms in C++
+
+This repository contains a C++ program that demonstrates three popular sorting algorithms: Selection Sort, Insertion Sort, and Bubble Sort. The program allows users to input an array and sorts it using these algorithms, providing insights into how each algorithm works.
+
+## Introduction
+
+Sorting is a fundamental operation in computer science used to arrange elements in a specific order. This C++ program showcases three sorting algorithms:
+
+1. **Selection Sort**: This algorithm repeatedly selects the smallest (or largest) element from the unsorted part of the array and places it at the beginning. It's a simple and intuitive sorting method.
+
+2. **Insertion Sort**: This algorithm builds the final sorted array one item at a time. It takes an element from the unsorted part and inserts it into its correct position in the sorted part.
+
+3. **Bubble Sort**: This algorithm repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass-throughs are repeated until the list is sorted.
+
+This program provides hands-on experience with these sorting algorithms and demonstrates how they work on user-defined arrays.
+
+## Algorithm
+
+Here is a high-level overview of the program's algorithm:
+
+1. Input the number of elements in the array and the array itself from the user.
+2. Perform **Selection Sort**:
+   - Find the minimum element in the unsorted part of the array and swap it with the first unsorted element.
+   - Repeat the process for the remaining unsorted elements.
+3. Perform **Insertion Sort**:
+   - Build the final sorted array one element at a time by taking elements from the unsorted part and inserting them into their correct positions in the sorted part.
+4. Perform **Bubble Sort**:
+   - Repeatedly compare adjacent elements and swap them if they are in the wrong order.
+   - Continue these passes until the list is sorted or no swaps are made in a pass.
+5. Display the sorted results for all three sorting algorithms.
+
+## Usage
+
+To use this program:
+
+1. Clone or download this repository to your local machine.
+2. Open a C++ compiler or IDE.
+3. Build and run the program.
+4. Follow the on-screen instructions to input the array you want to sort.
+5. The program will execute all three sorting algorithms and display the sorted results.
+
+## Output
+
+![image](https://github.com/Vrn24/Guest-Lecture/assets/112547439/140418db-b421-4298-a9c9-07c9312ba05a)
+
+
 
 
 
