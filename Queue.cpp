@@ -3,6 +3,7 @@
 /*Queue Implimentation*/
 
 #include <iostream>
+using namespace std;
 
 const int MAX_SIZE = 100; // Maximum size of the queue
 
@@ -13,141 +14,93 @@ private:
 
 public:
     Queue() {
-        front = -1;
-        rear = -1;
+        front = rear = -1;
     }
 
-    // Function to check if the queue is empty
     bool isEmpty() {
-        return (front == -1 && rear == -1);
+        return front == -1;
     }
 
-    // Function to check if the queue is full
     bool isFull() {
-        return (rear + 1) % MAX_SIZE == front;
+        return (rear == MAX_SIZE - 1) || (rear == front - 1);
     }
 
-    // Function to add an element to the queue
-    void enqueue(int value) {
+    void enqueue(int data) {
         if (isFull()) {
-            std::cout << "Queue is full. Cannot enqueue." << std::endl;
-            return;
-        } else if (isEmpty()) {
-            front = rear = 0;
+            cout << "Queue is full. Cannot enqueue." << endl;
         } else {
-            rear = (rear + 1) % MAX_SIZE;
+            if (front == -1) {
+                front = rear = 0;
+            } else {
+                rear = (rear + 1) % MAX_SIZE;
+            }
+            arr[rear] = data;
+            cout << "Enqueued: " << data << endl;
         }
-        arr[rear] = value;
     }
 
-    // Function to remove an element from the queue
     void dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot dequeue." << std::endl;
-            return;
-        } else if (front == rear) {
-            front = rear = -1;
+            cout << "Queue is empty. Cannot dequeue." << endl;
         } else {
-            front = (front + 1) % MAX_SIZE;
+            int data = arr[front];
+            if (front == rear) {
+                front = rear = -1;
+            } else {
+                front = (front + 1) % MAX_SIZE;
+            }
+            cout << "Dequeued: " << data << endl;
         }
     }
 
-    // Function to get the front element of the queue
-    int getFront() {
+    void display() {
         if (isEmpty()) {
-            std::cout << "Queue is empty." << std::endl;
-            return -1;
+            cout << "Queue is empty." << endl;
+        } else {
+            int i = front;
+            cout << "Queue elements: ";
+            while (i != rear) {
+                cout << arr[i] << " ";
+                i = (i + 1) % MAX_SIZE;
+            }
+            cout << arr[rear] << endl;
         }
-        return arr[front];
     }
 };
 
 int main() {
     Queue q;
+    int choice, data;
 
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
+    while (true) {
+        cout << "Queue Menu:" << endl;
+        cout << "1. Enqueue" << endl;
+        cout << "2. Dequeue" << endl;
+        cout << "3. Display" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    std::cout << "Front element: " << q.getFront() << std::endl;
-
-    q.dequeue();
-    std::cout << "Front element after dequeue: " << q.getFront() << std::endl;
+        switch (choice) {
+            case 1:
+                cout << "Enter data to enqueue: ";
+                cin >> data;
+                q.enqueue(data);
+                break;
+            case 2:
+                q.dequeue();
+                break;
+            case 3:
+                q.display();
+                break;
+            case 4:
+                cout << "Exiting the program." << endl;
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
     return 0;
 }
-
-#include <iostream>
-
-const int MAX_SIZE = 100; // Maximum size of the queue
-
-class Queue {
-private:
-    int front, rear;
-    int arr[MAX_SIZE];
-
-public:
-    Queue() {
-        front = -1;
-        rear = -1;
-    }
-
-    // Function to check if the queue is empty
-    bool isEmpty() {
-        return (front == -1 && rear == -1);
-    }
-
-    // Function to check if the queue is full
-    bool isFull() {
-        return (rear + 1) % MAX_SIZE == front;
-    }
-
-    // Function to add an element to the queue
-    void enqueue(int value) {
-        if (isFull()) {
-            std::cout << "Queue is full. Cannot enqueue." << std::endl;
-            return;
-        } else if (isEmpty()) {
-            front = rear = 0;
-        } else {
-            rear = (rear + 1) % MAX_SIZE;
-        }
-        arr[rear] = value;
-    }
-
-    // Function to remove an element from the queue
-    void dequeue() {
-        if (isEmpty()) {
-            std::cout << "Queue is empty. Cannot dequeue." << std::endl;
-            return;
-        } else if (front == rear) {
-            front = rear = -1;
-        } else {
-            front = (front + 1) % MAX_SIZE;
-        }
-    }
-
-    // Function to get the front element of the queue
-    int getFront() {
-        if (isEmpty()) {
-            std::cout << "Queue is empty." << std::endl;
-            return -1;
-        }
-        return arr[front];
-    }
-};
-
-int main() {
-    Queue q;
-
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-
-    std::cout << "Front element: " << q.getFront() << std::endl;
-
-    q.dequeue();
-    std::cout << "Front element after dequeue: " << q.getFront() << std::endl;
-
-    return 0;
-}
+1
