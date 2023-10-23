@@ -21,8 +21,6 @@ This C++ program utilizes the Shunting Yard algorithm and a stack to convert inf
 
 ## Algorithm
 
-The Shunting Yard algorithm is a method for parsing mathematical expressions specified in infix notation. It uses two stacks, one for operators and another for operands, to transform an infix expression to a postfix expression.
-
 The algorithm works as follows:
 1. Initialize an empty stack for operators and an empty output queue for the postfix expression.
 2. Read the expression from left to right.
@@ -41,36 +39,73 @@ The resulting output queue will be the postfix notation of the input infix expre
 - Supports addition, subtraction, multiplication, division operators.
 - Handles parentheses to enforce proper order of operations.
 
-## How to Use
+## Code
+/*22070123129*/
+/*Varun Pagote*/
+/*Stack Implementation*/
+#include <iostream>
+#include <stack>
 
-1. **Clone the repository:**
+using namespace std;
 
-    ```bash
-    git clone https://github.com/your-username/infix-to-postfix.git
-    ```
+void displayStack(stack<int> s) {
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << endl;
+}
 
-2. **Compile the program:**
+int main() {
+    stack<int> myStack;
+    int choice;
+    int value;
 
-    Navigate to the project directory and compile the C++ code using a C++ compiler:
+    do {
+        cout << "Menu:\n";
+        cout << "1. Push\n";
+        cout << "2. Pop\n";
+        cout << "3. Display\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    ```bash
-    g++ -o infix_to_postfix main.cpp
-    ```
+        switch (choice) {
+            case 1:
+                cout << "Enter a value to push: ";
+                cin >> value;
+                myStack.push(value);
+                break;
 
-3. **Run the program:**
+            case 2:
+                if (!myStack.empty()) {
+                    cout << "Popped value: " << myStack.top() << endl;
+                    myStack.pop();
+                } else {
+                    cout << "Stack is empty.\n";
+                }
+                break;
 
-    Execute the compiled binary:
+            case 3:
+                cout << "Stack elements: ";
+                displayStack(myStack);
+                break;
 
-    ```bash
-    ./infix_to_postfix
-    ```
+            case 4:
+                cout << "Exiting program.\n";
+                break;
 
-    Follow the on-screen prompts to enter an infix expression and see its corresponding postfix expression.
+            default:
+                cout << "Invalid choice. Please try again.\n";
+                break;
+        }
+    } while (choice != 4);
 
-## Installation
+    return 0;
+}
 
-Ensure you have a C++ compiler (e.g., g++) installed on your system.
+## Output
 
-```bash
-sudo apt-get update
-sudo apt-get install g++
+![image](https://github.com/Vrn24/Guest-Lecture/assets/112547439/adda7da6-47a2-4c13-b53f-0be7d4e113af)
+
+fvfv
